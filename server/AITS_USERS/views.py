@@ -16,6 +16,17 @@ from django.conf import settings
 from rest_framework.decorators import action
 from rest_framework.viewsets import ViewSet, GenericViewSet
 
+import os
+from django.http import HttpResponse
+from django.conf import settings
+
+def index(request):
+    index_file_path = os.path.join(settings.BASE_DIR, 'path_to_react_project', 'dist', 'index.html')
+    with open(index_file_path, encoding='utf-8') as f:
+        return HttpResponse(f.read())
+
+
+
 
 User = get_user_model() # Get the custom user model
 
