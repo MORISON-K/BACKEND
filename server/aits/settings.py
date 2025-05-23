@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key')
 
 # The client folder is one level above BASE_DIR
 # Corrected path to point to the dist folder within aits_frontend
-CLIENT_DIST = BASE_DIR.parent / 'client' / 'aits_frontend' / 'dist' # Corrected path to the main client build output
+#CLIENT_DIST = BASE_DIR.parent / 'client' / 'aits_frontend' / 'dist' # Corrected path to the main client build output
 
 # Email settings
 EMAIL_HOST = 'smtp.gmail.com'
@@ -100,10 +100,10 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATES[0]['DIRS'] = [
-    str(CLIENT_DIST),
-    os.path.join(BASE_DIR, 'templates'),
-]
+#TEMPLATES[0]['DIRS'] = [
+ #   str(CLIENT_DIST),
+  #  os.path.join(BASE_DIR, 'templates'),
+#]
 
 WSGI_APPLICATION = 'aits.wsgi.application'
 
@@ -157,11 +157,11 @@ STATIC_URL  = "/static/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(CLIENT_DIST, 'assets'), # Uses the corrected CLIENT_DIST for assets
+    #os.path.join(CLIENT_DIST, 'assets'), # Uses the corrected CLIENT_DIST for assets
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-WHITENOISE_ROOT = os.path.join(CLIENT_DIST)
+#wHITENOISE_ROOT = os.path.join(CLIENT_DIST)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
